@@ -1,0 +1,10 @@
+-r requirements.txt
+# evaluation
+ragas>=0.2,<0.4
+pandas>=2.0
+datasets>=2.19
+# optional vector store (set VECTOR_STORE=chroma)
+chromadb>=0.5
+# dev
+pytest>=8.0
+httpx>=0.27

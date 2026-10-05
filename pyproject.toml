@@ -1,0 +1,26 @@
+[project]
+name = "agentic-rag-assistant"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "ddgs>=9.0",
+    "faiss-cpu>=1.8",
+    "fastapi>=0.111",
+    "fastembed>=0.4",
+    "langchain-anthropic>=0.3",
+    "langchain-core>=0.3",
+    "langchain-groq>=0.3",
+    "langchain-openai>=0.3",
+    "langchain-text-splitters>=0.3",
+    "langgraph>=0.4",
+    "numpy>=1.26",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "pypdf>=4.0",
+    "python-multipart>=0.0.9",
+    "rank-bm25>=0.2.2",
+    "streamlit>=1.37",
+    "uvicorn[standard]>=0.30",
+]

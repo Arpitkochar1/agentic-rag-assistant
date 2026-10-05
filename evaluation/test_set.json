@@ -1,0 +1,14 @@
+[
+  {"question": "What chunk size and overlap are common defaults for RAG indexing?", "reference": "A chunk size of 800 characters with an overlap of 120 characters.", "source": "rag_fundamentals.md"},
+  {"question": "Why does chunk overlap help?", "reference": "It prevents a sentence that straddles a chunk boundary from losing its context.", "source": "rag_fundamentals.md"},
+  {"question": "What is the usual value of the constant k in Reciprocal Rank Fusion?", "reference": "k is usually 60.", "source": "rag_fundamentals.md"},
+  {"question": "Why use RRF instead of adding BM25 and cosine scores?", "reference": "RRF only uses ranks, so it avoids comparing incompatible score scales like BM25 scores and cosine similarities.", "source": "rag_fundamentals.md"},
+  {"question": "Why can't cross-encoders be run over the whole corpus?", "reference": "They are too slow, so they are only applied to the top candidates from the first-stage retriever.", "source": "rag_fundamentals.md"},
+  {"question": "What does the RAGAS faithfulness metric measure?", "reference": "Whether the answer is supported by the retrieved context.", "source": "rag_fundamentals.md"},
+  {"question": "What does context recall check in RAGAS?", "reference": "Whether all the information needed to answer was retrieved.", "source": "rag_fundamentals.md"},
+  {"question": "What are the possible routes in the agentic RAG system?", "reference": "Document retrieval, web search, a calculator tool, or a direct answer.", "source": "agent_and_guardrails.md"},
+  {"question": "How should the calculator tool evaluate expressions safely?", "reference": "The LLM only converts the question into an expression and a whitelist-based AST evaluator computes it, never eval.", "source": "agent_and_guardrails.md"},
+  {"question": "What is indirect prompt injection in RAG?", "reference": "A retrieved document or web page contains hidden instructions like 'ignore previous instructions', so retrieved text must be treated as untrusted.", "source": "agent_and_guardrails.md"},
+  {"question": "Which output guardrails are described?", "reference": "Removing hallucinated citation numbers, redacting PII, and a grounding check that the answer is supported by the context.", "source": "agent_and_guardrails.md"},
+  {"question": "How does the Dependency Inversion Principle apply to the agent?", "reference": "The agent depends on abstractions, and a single composition root wires up the concrete classes.", "source": "agent_and_guardrails.md"}
+]
