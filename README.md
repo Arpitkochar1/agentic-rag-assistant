@@ -22,18 +22,6 @@ flowchart LR
   GO --> C[add_citations] --> A[Answer + sources]
 ```
 
-## SOLID, mapped to the code
-
-| Principle | Where |
-|---|---|
-| **S**ingle responsibility | One class per job: `loaders`, `RecursiveChunker`, `FaissVectorStore`, `BM25KeywordIndex`, `HybridRetriever`, `FastEmbedReranker`, each guardrail, `AnswerGenerator`, `AgentNodes`, `AgentService` |
-| **O**pen/closed | New LLM provider → `register_provider()`; new retrieval strategy → one branch in `retrieval/factory.py`; new tool → add to the tools dict; new guardrail → append to the chain. No existing class is edited |
-| **L**iskov | `VectorRetriever`, `HybridRetriever`, `RerankingRetriever` are interchangeable `Retriever`s; FAISS ↔ Chroma swap with one env var |
-| **I**nterface segregation | Small `Protocol`s in `domain/interfaces.py` (`Embedder`, `Reranker`, `Retriever`, `Tool`, `Router`…) instead of one fat base class |
-| **D**ependency inversion | Agent/nodes depend only on protocols; `container.py` is the single composition root that knows concrete classes. Tests inject fakes |
-
-`RerankingRetriever` is a Decorator, `GuardrailChain` a Composite/Chain-of-Responsibility, `LLM_PROVIDERS` a registry.
-
 ## Guardrails (`src/rag_agent/guardrails`)
 
 | Stage | Guardrail | Action |
