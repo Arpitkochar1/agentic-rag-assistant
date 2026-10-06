@@ -112,11 +112,3 @@ Iterate and re-run after changing `CHUNK_SIZE`, `CHUNK_OVERLAP`, `TOP_K`, `CANDI
 pip install -r requirements-extras.txt && pytest -q     # 36 tests, no API key or model download needed
 ```
 
-## Résumé bullets (fill the brackets from your own runs)
-- Built an agent (LangGraph) that routes each query to document retrieval, web search, or a calculator and returns answers with source citations.
-- Implemented hybrid retrieval (FAISS + BM25, RRF) with cross-encoder reranking over **[N]** chunks from **[M]** documents, improving **[answer relevancy / hit-rate@5]** by **[X%]** over vector-only baseline.
-- Added input/output guardrails (prompt-injection, PII redaction, indirect-injection sanitising, citation + grounding checks).
-- Evaluated with RAGAS on a **[30]**-question set (faithfulness **[X]**, answer relevancy **[X]**); iterated on chunk size, prompts, retrieval settings.
-- Served via FastAPI (SSE streaming) + Streamlit UI, containerised with Docker, deployed on **Streamlit Community Cloud** (+ **[Render/HF Spaces]**).
-
-Only claim numbers you actually measured.
